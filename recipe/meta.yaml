@@ -1,5 +1,5 @@
 {% set name = "rootstock" %}
-{% set version = "0.7.0" %}
+{% set version = "0.7.1" %}
 {% set python_min = "3.11" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/rootstock-{{ version }}.tar.gz
-  sha256: b1796a9bb6777d19fc8ab6740db74864597b00aaf2d06da493e1f124b5efaa46
+  sha256: ec04b63cdf08ad1e0b9c78c5e63f66bdd70d89e6a7a110ab63fa447fa296ebdc
 
 build:
   noarch: python
