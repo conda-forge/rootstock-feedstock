@@ -1,0 +1,56 @@
+schema_version: 1
+
+context:
+  name: rootstock
+  version: "0.7.3"
+  python_min: "3.11"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/rootstock-${{ version }}.tar.gz
+  sha256: d928fe62bc305b00b9606f925c5a4025fd1cd9983e31ce9d687e3d1c7115f226
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  python:
+    entry_points:
+      - rootstock = rootstock.cli:main
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - hatchling
+    - pip
+  run:
+    - python >=${{ python_min }}
+    - ase >=3.22
+    - numpy >=1.24
+    - packaging >=21.0
+
+tests:
+  - python:
+      imports:
+        - rootstock
+      pip_check: true
+      python_version: ${{ python_min }}
+  - requirements:
+      run:
+        - pip
+        - python ${{ python_min }}.*
+    script:
+      - rootstock --help
+
+about:
+  summary: MLIP calculators with isolated Python environments
+  license: MIT
+  license_file: LICENSE.md
+  homepage: https://pypi.org/project/rootstock/
+
+extra:
+  recipe-maintainers:
+    - jan-janssen
