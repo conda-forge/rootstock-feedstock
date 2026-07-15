@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: rootstock
-  version: "0.9.7"
+  version: 0.9.8
   python_min: '3.11'
 
 package:
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/rootstock-${{ version }}.tar.gz
-  sha256: e8796599ece79ca78f38bfe517a1f47d312de9e2d8257d8b46d7d64113020551
+  sha256: bdd1ffdd99d5d1fdd11f111b043f1a8aef23d8f5d9fdeda96534930110c93f88
 
 build:
   number: 0
@@ -31,7 +31,6 @@ requirements:
     - ase >=3.22
     - numpy >=1.24
     - packaging >=21.0
-    - tomli >=2.0
 tests:
   - python:
       imports:
