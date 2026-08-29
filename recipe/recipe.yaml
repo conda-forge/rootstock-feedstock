@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: rootstock
-  version: "1.6.2"
+  version: "1.6.3"
   python_min: '3.11'
 
 package:
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/rootstock-${{ version }}.tar.gz
-  sha256: f38af099f221cadb8da4e4e22fafd1c6bbcd06a5a1390edf71685b91cfd3d96f
+  sha256: 5d9f659283dd1711e12463c90d66ba84c9462a3c3d43a68a0f3e68e79451ba0b
 
 build:
   number: 0
